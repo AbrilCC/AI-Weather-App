@@ -14,9 +14,8 @@ export const fetchWeather = async (location) => {
 
   } catch (error) {
     throw new Error(
-      error.response?.data?.error || "Failed to fetch weather"
+      error.response?.data?.error || "Failed to fetch weather",
+      {cause: error}
     );
-
   }
-
 };

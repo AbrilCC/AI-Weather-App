@@ -14,6 +14,11 @@ body {
   min-height: 100vh;
 }
 
+.home-container {
+  padding: 2rem;
+}
+
+/* ---------------------------TOPBAR--------------------------- */
 .topbar {
   height: 70px;
   background-color: #1e293b;
@@ -28,10 +33,7 @@ body {
   font-weight: bold;
 }
 
-.home-container {
-  padding: 2rem;
-}
-
+/* ---------------------------SEARCH BAR--------------------------- */
 .search-section {
   margin-bottom: 2rem;
 }
@@ -46,6 +48,34 @@ body {
   font-size: 1rem;
 }
 
+/* ---------------------------WEATHER INFO--------------------------- */
+.weather-card {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+.weather-details {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.forecast-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+.forecast-card {
+  min-width: 140px;
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+/* ---------------------------MAP--------------------------- */
 .map-container {
   height: 500px;
   border-radius: 20px;

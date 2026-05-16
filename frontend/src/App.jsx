@@ -1,10 +1,8 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import TopBar from './components/TopBar';
 import Home from './pages/Home';
 
 import './styles/styles.css';
-import './App.css';
-
 function App() {
 
   return (

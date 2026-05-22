@@ -1,6 +1,6 @@
 # Weather App – Fullstack Travel Planner
 
-Web application for weather consulting and vacation planning.
+Web application for weather consulting and vacation planning. Uses local hosting to avoid overuse of the Google Cloud APIs, since it's not too generous on token usage.
 
 Features:
 - Current weather

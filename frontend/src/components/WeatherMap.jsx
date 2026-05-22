@@ -1,13 +1,4 @@
 import { useEffect } from "react";
-/*
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap
-} from "react-leaflet";
-import "leaflet/dist/leaflet.css";*/
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const darkMapStyle = [
@@ -23,7 +14,7 @@ const darkMapStyle = [
     { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#334155" }] }
 ];
 
-export default function WeatherMap({ coordinates, location_name }) {
+export default function WeatherMap({ coordinates }) {
 
   const { isLoaded } = useJsApiLoader({
       googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY

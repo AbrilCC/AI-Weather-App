@@ -163,10 +163,12 @@ export default function Home({ setSidebarOpen, refreshFavorites, refreshTrips, s
         </div>
 
         <div className="map-container">
-            <WeatherMap coordinates={{
-                lat: weatherData?.location?.lat,
-                lon: weatherData?.location?.lon
-            }} location_name={weatherData?.location?.name} />
+            <WeatherMap
+                coordinates={{
+                    lat: weatherData?.location?.lat,
+                    lon: weatherData?.location?.lon
+                }}
+            />
         </div>
 
         <YouTubeSection

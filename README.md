@@ -48,6 +48,7 @@ Features:
 
 2. Setup your project:
 ```
+cd scripts/ 
 chmod +x setup.sh
 ./setup.sh
 ```

@@ -60,7 +60,7 @@ export default function Home({ setSidebarOpen, refreshFavorites, refreshTrips, s
                 weather_description: data.current?.weather[0]?.description ?? data.departure?.weather?.description ?? null
             });
             refreshTrips();
-            
+
         } catch (error) {
             setError(error.message);
         } finally {
@@ -169,10 +169,10 @@ export default function Home({ setSidebarOpen, refreshFavorites, refreshTrips, s
             }} location_name={weatherData?.location?.name} />
         </div>
 
-        {/*<YouTubeSection
+        <YouTubeSection
             videos={videos}
             locationName={weatherData?.location?.name}
-        />*/}
+        />
 
     </div>
   );

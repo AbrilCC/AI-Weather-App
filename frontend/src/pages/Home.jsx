@@ -14,7 +14,7 @@ import {
 import { fetchYouTubeVideos } from "../services/weatherApi";
 import { Menu, LocateFixed } from "lucide-react";
 
-export default function Home({ setSidebarOpen, refreshFavorites, selectedTrip, clearSelectedTrip }) {
+export default function Home({ setSidebarOpen, refreshFavorites, refreshTrips, selectedTrip, clearSelectedTrip }) {
     const [weatherData, setWeatherData] = useState(null);
     const [unitSystem, setUnitSystem] = useState("metric");
     const [lastSearch, setLastSearch] = useState({location: "New York City"});
@@ -46,6 +46,9 @@ export default function Home({ setSidebarOpen, refreshFavorites, selectedTrip, c
                     setVideos([]);
                 }
             }
+            const avgTemp = data.type === "historical"
+                ? data.history.temperature_2m_mean.reduce((a, b) => a + b, 0) / data.history.temperature_2m_mean.length
+                : null;
 
             await createTrip({
                 location_name: data.location.name,
@@ -53,9 +56,11 @@ export default function Home({ setSidebarOpen, refreshFavorites, selectedTrip, c
                 longitude: data.location.lon,
                 departure_date: searchData.departure_date || null,
                 return_date: searchData.return_date || null,
-                temperature: data.current?.main?.temp ?? null,
+                temperature: data.current?.main?.temp ?? avgTemp ?? null,
                 weather_description: data.current?.weather[0]?.description ?? data.departure?.weather?.description ?? null
             });
+            refreshTrips();
+            
         } catch (error) {
             setError(error.message);
         } finally {
@@ -164,10 +169,10 @@ export default function Home({ setSidebarOpen, refreshFavorites, selectedTrip, c
             }} location_name={weatherData?.location?.name} />
         </div>
 
-        <YouTubeSection
+        {/*<YouTubeSection
             videos={videos}
             locationName={weatherData?.location?.name}
-        />
+        />*/}
 
     </div>
   );

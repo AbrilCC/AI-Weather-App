@@ -7,6 +7,7 @@ import './styles/styles.css';
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [favoritesVersion, setFavoritesVersion] = useState(0);
+  const [tripsVersion, setTripsVersion] = useState(0);
   const [selectedTrip, setSelectedTrip] = useState(null);
 
   return (
@@ -18,6 +19,7 @@ function App() {
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
         favoritesVersion={favoritesVersion}
+        tripsVersion={tripsVersion}
         onTripSelect={setSelectedTrip}
         onFavoriteSelect={(favorite) => setSelectedTrip({ 
           location_name: favorite.location_name,
@@ -29,6 +31,7 @@ function App() {
       <Home
         setSidebarOpen={setSidebarOpen} 
         refreshFavorites={() => setFavoritesVersion(prev => prev + 1)}
+        refreshTrips={() => setTripsVersion(v => v + 1)}
         selectedTrip={selectedTrip}
         clearSelectedTrip={() => setSelectedTrip(null)}
       />

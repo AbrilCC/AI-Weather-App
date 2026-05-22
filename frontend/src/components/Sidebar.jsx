@@ -3,8 +3,7 @@ import { getFavorites, getTrips, deleteTrip, editTrip, exportTrip  } from "../se
 import { formatDate } from "../utils/formatDate";
 import { X, Star, Trash2, Pencil, Download } from "lucide-react";
 
-
-export default function Sidebar({sidebarOpen, setSidebarOpen, favoritesVersion, onTripSelect, onFavoriteSelect }) {
+export default function Sidebar({sidebarOpen, setSidebarOpen, favoritesVersion, tripsVersion, onTripSelect, onFavoriteSelect }) {
     const [favorites, setFavorites] = useState([]);
     const [trips, setTrips] = useState([]);
     const [hoveredTrip, setHoveredTrip] = useState(null);
@@ -29,10 +28,14 @@ export default function Sidebar({sidebarOpen, setSidebarOpen, favoritesVersion, 
             console.error(error);
         }
     };
+
     useEffect(() => {
         fetchFavorites();
-        fetchTrips();
     }, [favoritesVersion]);
+
+    useEffect(() => {
+        fetchTrips();
+    }, [tripsVersion]);
 
     const handleDelete = async (tripId, e) => {
         e.stopPropagation();

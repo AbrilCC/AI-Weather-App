@@ -58,3 +58,5 @@ chmod +x setup.sh
 chmod +x run.sh
 ./run.sh
 ```
+
+4. Find the project in http://localhost:5173 or change the backend/src/app.js file to use a different port.

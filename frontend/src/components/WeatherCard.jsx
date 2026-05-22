@@ -61,8 +61,7 @@ export default function WeatherCard({ weatherData, unitSystem, refreshFavorites,
     }
   };
 
-  const getTempClass = (celsius) => {
-    const c = unitSystem === "imperial" ? (celsius - 32) * 5/9 : celsius;
+  const getTempClass = (c) => {
     if (c < 0)  return "temp-freezing";
     if (c < 10) return "temp-cold";
     if (c < 20) return "temp-cool";

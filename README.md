@@ -26,6 +26,7 @@ Features:
 - Axios
 - Open Weather Map API
 - Open Meteo API
+- Google Maps JavaScript API 
 - YouTube Data API v3
 
 ### Frontent

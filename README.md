@@ -33,7 +33,6 @@ Features:
 - React v19.2.6
 - Vite v8.0.12
 - Axios
-- Leaflet Maps
 - React Router
 - Lucide React
 
